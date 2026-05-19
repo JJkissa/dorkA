@@ -1,7 +1,7 @@
 ### JAJAJAJA
 
-# Install dependency (one-time)
-pip install duckduckgo-search
+# Install dependency (one-time)(ajaa itekin)((hups, aja venvissä ni ei hajoo mikää)):D
+pip install ddgs
 
 # Person scan
 python dork_tool.py
