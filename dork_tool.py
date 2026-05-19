@@ -90,7 +90,7 @@ def _validate_categories(value: str) -> List[str]:
 
 def _parse_args(argv: Iterable[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Generate and run Google dork style discovery queries.")
-    parser.add_argument("--target", help="Person or organisation target")
+    parser.add_argument("--target", help="Person or organization target")
     parser.add_argument("--type", choices=["person", "organization"], default="person")
     parser.add_argument("--aliases", type=_split_csv, default=[])
     parser.add_argument("--usernames", type=_split_csv, default=[])

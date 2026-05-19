@@ -18,7 +18,7 @@ python dork_tool.py \
   --location "New York"
 ```
 
-Organisation scan:
+Organization scan:
 
 ```bash
 python dork_tool.py --target "Acme Corp" --type organization --org "Acme Corp"
