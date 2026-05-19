@@ -1,4 +1,4 @@
-###JAJAJAJA
+### JAJAJAJA
 
 # Install dependency (one-time)
 pip install duckduckgo-search
