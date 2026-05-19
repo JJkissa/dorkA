@@ -21,7 +21,7 @@
 ╚══════════════════════════════════════════════════════════════╝
 
 Requirements:
-    pip install duckduckgo-search requests
+    pip install ddgs requests
 
 Notes:
     - DuckDuckGo supports: site:, filetype:/ext:, inurl:, intitle:, intext:, OR, "exact"
@@ -51,7 +51,7 @@ import hashlib
 def _ensure_packages():
     """Install missing packages at startup so the script is self-contained."""
     import subprocess
-    required = {"duckduckgo-search": "duckduckgo_search", "requests": "requests"}
+    required = {"ddgs": "ddgs", "requests": "requests"}
     for pip_name, import_name in required.items():
         try:
             __import__(import_name)
@@ -64,7 +64,7 @@ def _ensure_packages():
 
 _ensure_packages()
 
-from duckduckgo_search import DDGS  # type: ignore
+from ddgs import DDGS  # type: ignore
 import requests  # type: ignore  # noqa: F401  (kept for future use)
 
 
