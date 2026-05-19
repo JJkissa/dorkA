@@ -50,8 +50,9 @@ class DorkToolTests(unittest.TestCase):
         self.assertTrue(any("leak" in q or "breach" in q for q in lines))
 
     def test_invalid_category_is_rejected(self):
-        with self.assertRaises(SystemExit):
+        with self.assertRaises(SystemExit) as ctx:
             dork_tool.main(["--target", "Jane Doe", "--categories", "unknown"])
+        self.assertNotEqual(ctx.exception.code, 0)
 
 
 if __name__ == "__main__":

@@ -7,8 +7,10 @@ from typing import Dict, Iterable, List
 
 try:
     from duckduckgo_search import DDGS  # type: ignore
-except Exception:
+    _DDGS_IMPORT_ERROR = None
+except (ImportError, ModuleNotFoundError) as exc:
     DDGS = None
+    _DDGS_IMPORT_ERROR = exc
 
 CATEGORY_QUERIES = {
     "social_media": [
@@ -122,7 +124,8 @@ def _parse_args(argv: Iterable[str]) -> argparse.Namespace:
 
 def _run_queries(queries: List[str], delay: float) -> List[dict]:
     if DDGS is None:
-        raise RuntimeError("duckduckgo-search is not installed. Run: pip install duckduckgo-search")
+        details = f" ({_DDGS_IMPORT_ERROR})" if _DDGS_IMPORT_ERROR else ""
+        raise RuntimeError(f"duckduckgo-search could not be imported{details}. Run: pip install duckduckgo-search")
 
     results: List[dict] = []
     with DDGS() as ddgs:  # type: ignore[misc]
