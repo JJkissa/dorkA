@@ -4,12 +4,12 @@
 pip install duckduckgo-search
 
 # Person scan
-python dork_tool.py \
-  --target "Jane Doe" \
-  --aliases "Jan Doe,J. Doe" \
-  --usernames "janedoe99,j_doe" \
-  --socials "twitter:janedoe,github:janedoe99" \
-  --org "Acme Corp" \
+python dork_tool.py
+  --target "Jane Doe"
+  --aliases "Jan Doe,J. Doe"
+  --usernames "janedoe99,j_doe"
+  --socials "twitter:janedoe,github:janedoe99"
+  --org "Acme Corp" 
   --location "New York"
 
 # Organisation scan
