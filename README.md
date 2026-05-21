@@ -29,7 +29,7 @@ python dork_tool.py --target "Jane Doe" --dry-run
 python dork_tool.py --list-categories
 
 
-# Usage
+# Usage with LLM
 Basic Execution (With LLM Enabled)
 By default, the tool will attempt to connect to localhost:1234 to generate dynamic queries based on the target context, execute them, and validate the results.
 
